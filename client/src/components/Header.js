@@ -18,11 +18,10 @@ class Header extends Component {
 
                   default:
                         return [
-                              <React.Fragment>
-                              <li key="1"><Payments /></li>
-                              <li key="2"><a style={{color:'black'}} href="/api/logout">Logout</a></li>
-                              </React.Fragment>
-                        ];
+                              <li key="1"><Payments /></li>,
+                              <li key="2"><a style={{ color: 'black', margin:'0 10px' }}>{`Credits : ${this.props.auth.credits}`}</a></li>,
+                              <li key="3"><a style={{color:'black'}} href="/api/logout">Logout</a></li>
+                                     ];
             }
       }
       render() {

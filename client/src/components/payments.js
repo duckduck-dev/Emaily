@@ -1,22 +1,21 @@
-import React, {Component} from 'react';
-import StripeCheckOut from 'react-stripe-checkout';
+import React from 'react';
+import StripeCheckout from 'react-stripe-checkout';
+import { useDispatch } from 'react-redux';
+import { handleToken } from '../actions/index';
 
+export default () => {
 
-class Payments extends Component {
-      render() {
-            return(
-                  <StripeCheckOut
-                        name = "Emaily"
-                        description = "$5 for 5 email credits"
-                        amount={500}
-                        token = {token => console.log(token)}
-                        stripeKey={process.env.REACT_APP_STRIPE_KEY}>
-                        
-                        <button className="btn">Add Credits</button>
-                  
-                        </StripeCheckOut>
-            );
-      }
-}
+      const dispatch = useDispatch();
 
-export default Payments;
+      return(
+            <StripeCheckout
+                  name="Emaily"
+                  description="&#8377;5 for 5 email credits"
+                  amount={500}
+                  token={token => dispatch(handleToken(token))}
+                  stripeKey={process.env.REACT_APP_STRIPE_KEY}
+                  currency="INR">
+                  <div className="btn red">Add Credits</div>
+            </StripeCheckout>
+      );
+};
