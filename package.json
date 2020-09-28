@@ -13,7 +13,6 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
-
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +24,7 @@
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "react-stripe-checkout": "^2.6.3",
+    "sendgrid": "^5.2.3",
     "stripe": "^8.100.0"
   },
   "devDependencies": {
