@@ -11,7 +11,7 @@ module.exports = app => {
             const { title, subject, body, recipients } = req.body;
             
             //spliting the ',' separated array of recipients and returning them as separate objects.
-            const emailObjects = recipients.split(',').map(email => ( { email : email.trim() } ) );
+            const emailObjects = recipients.split(',').map(email => ( {email: email.trim()} ) );
             
             const survey = new Survey( {
                 title,
@@ -23,5 +23,6 @@ module.exports = app => {
             } );
             
             const mailer = new Mailer(survey, surveyTemplate(survey));
+            mailer.send();
     } );
 };

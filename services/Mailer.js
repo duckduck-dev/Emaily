@@ -30,7 +30,9 @@ class Mailer extends helper.Mail {
         //formatAddresses => list of distinct recipients(multiple people).
         //pull off email prop from every recipient object and format it with helper.
         formatAddresses(recipients) {
-            recipients.map( ( {email} ) => new helper.Email(email) );
+           return recipients.map( ( {email} ) => {
+                return new helper.Email(email)
+            } );
         }
 
         addClickTracking() {
@@ -44,7 +46,7 @@ class Mailer extends helper.Mail {
         addRecipients() {
             const personalize = new helper.Personalization();
             this.recipients.forEach(recipient => {
-                personalize.addTo(recipient);
+                personalize.addTo(recipient)
             } );
             this.addPersonalization(personalize);
         }
