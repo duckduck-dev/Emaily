@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
-import Logo from './images/Logo.png';
 import Payments from './payments';
 
 class Header extends Component {
@@ -13,13 +12,13 @@ class Header extends Component {
 
                   case false:
                         return (
-                              <li><a style={{color:'black'}} href="/auth/google"><img className="circle responsive-image" style={{width:'5vh', paddingTop:'1rem'}} src="http://pngimg.com/uploads/google/google_PNG19630.png" /></a></li>
+                              <li><a style={{color:'black'}} href="/auth/google"><img className="circle responsive-image" style={{width:'5vh', paddingTop:'1rem'}} src="http://pngimg.com/uploads/google/google_PNG19630.png" alt="google sigin" /></a></li>
                         );
 
                   default:
                         return [
                               <li key="1"><Payments /></li>,
-                              <li key="2"><a style={{ color: 'black', margin:'0 10px' }}>{`Credits : ${this.props.auth.credits}`}</a></li>,
+                              <li key="2"><div href="" style={{ color: 'black', margin:'0 10px' }}>{`Credits : ${this.props.auth.credits}`}</div></li>,
                               <li key="3"><a style={{color:'black'}} href="/api/logout">Logout</a></li>
                                      ];
             }
