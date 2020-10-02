@@ -12,34 +12,32 @@ class Header extends Component {
 
                   case false:
                         return (
+                              <React.Fragment>
+                              <li style={{color:'black'}} className="align-center">blog</li>
                               <li><a style={{color:'black'}} href="/auth/google"><img className="circle responsive-image" style={{width:'5vh', paddingTop:'1rem'}} src="http://pngimg.com/uploads/google/google_PNG19630.png" alt="google sigin" /></a></li>
+                              </React.Fragment>
                         );
 
                   default:
                         return [
                               <li key="1"><Payments /></li>,
                               <li key="2"><div href="" style={{ color: 'black', margin:'0 10px' }}>{`Credits : ${this.props.auth.credits}`}</div></li>,
-                              <li key="3"><a style={{color:'black'}} href="/api/logout">Logout</a></li>
+                              <li key="3"><a  href="/api/logout">Logout</a></li>
                                      ];
             }
       }
       render() {
             return(
-                  <nav style={{height:'500px'}}>
-                        <div className="nav-wrapper cyan lighten-4">
+                  <nav style={{ height: '7rem' }}>
+                        <div className="nav-wrapper white">
                               <Link to={ this.props.auth ? '/surveys' : '/' } 
                                     className="left brand-logo " style={{marginLeft:'3vw', color:'black'}}>
-                                    <i  style={{fontSize:'6.7vh', color:'#333333', marginTop:'1.2rem'}}className="fas fa-circle-notch fa-spin"></i>
-                                    <div style={{margin:'1.1rem 0 0 1rem', position:'absolute', color:'#424242', fontWeight:'bold', fontSize:'2.5rem'}}>E</div>
+                                    <div style={{margin:'1.1rem 0 0 1rem', position:'absolute', color:'#424242', fontWeight:'bold', fontSize:'2.5rem'}}>Logo</div>
                               </Link>
-                              <ul className="right" style={{margin:'1rem 1vw 0 0'}}>
+                              <ul className="right" >
                                    {this.renderContent()}
                               </ul>
-                        <div  style={{margin:'10rem 0 0 7rem', position: "absolute", color:'#424242'}}><h1>
-                              Emaily!!!
-                        </h1>
-                        Collect feedback from your users
-                        </div>
+                             
                         </div>
                   </nav>
             );

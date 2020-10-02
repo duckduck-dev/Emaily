@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import formFields from './formFields'
 import { submitSurvey } from '../../actions/index';
 import { withRouter } from 'react-router-dom';
+
 export default withRouter(( { onCancel, history } ) => {
 
     const { surveyForm: { values } } = useSelector(stat => stat.form);

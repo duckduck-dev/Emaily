@@ -21,6 +21,7 @@
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.6",
+    "ngrok": "^3.3.0",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "react-stripe-checkout": "^2.6.3",

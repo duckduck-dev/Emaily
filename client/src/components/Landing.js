@@ -2,7 +2,7 @@ import React from 'react';
 
 const Landing = () => {
       return(
-            <div style={{textAlign: 'center'}}>
+            <div>
                  <h1>Contents coming soon!</h1>
             </div>
       );

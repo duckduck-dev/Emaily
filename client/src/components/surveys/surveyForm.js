@@ -5,7 +5,7 @@ import SurveyField from './surveyField';
 import _ from 'lodash';
 import validateEmails from '../../utils/validateEmails';
 import formFields from './formFields';
-
+import Typist from 'react-typist';
 
 const surveyForm = props => {
 
