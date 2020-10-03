@@ -13,7 +13,7 @@ export default () => {
 
     const renderSurveys = state.reverse().map(survey => {
         return(
-            <div key={survey._id} className="card darken-1 card-panel hoverable">
+            <div key={survey._id} className="card blue-grey darken-1 card-panel hoverable">
                 <div className="card-content">
                     <span className="card-title">{survey.title}</span>
                     <p>{survey.body}</p>
