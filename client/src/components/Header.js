@@ -13,7 +13,6 @@ class Header extends Component {
                   case false:
                         return (
                               <React.Fragment>
-                              <li style={{color:'black'}} className="align-center">blog</li>
                               <li><a style={{color:'black'}} href="/auth/google"><img className="circle responsive-image" style={{width:'5vh', paddingTop:'1rem'}} src="http://pngimg.com/uploads/google/google_PNG19630.png" alt="google sigin" /></a></li>
                               </React.Fragment>
                         );
@@ -22,7 +21,7 @@ class Header extends Component {
                         return [
                               <li key="1"><Payments /></li>,
                               <li key="2"><div href="" style={{ color: 'black', margin:'0 10px' }}>{`Credits : ${this.props.auth.credits}`}</div></li>,
-                              <li key="3"><a  href="/api/logout">Logout</a></li>
+                              <li key="3"><a  href="/api/logout" style={{ color: 'black' }}>Logout</a></li>
                                      ];
             }
       }
