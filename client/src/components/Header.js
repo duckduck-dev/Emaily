@@ -16,10 +16,11 @@ class Header extends Component {
                   case false:
                         return (
                               <React.Fragment>
+                              <li><a style={{color:'black', fontWeight:'500', fontSize: '1.2rem'}} href="/auth/google">Sign in</a></li>
                               <li ><Link to="" className="black-text" style={{fontWeight:'500', fontSize: '1.2rem'}}>Blog</Link></li>
+                              <li ><Link to="" className="black-text" style={{fontWeight:'500', fontSize: '1.2rem'}}>Company</Link></li>
                               <li ><Link to="" className="black-text" style={{fontWeight:'500', fontSize: '1.2rem'}}>Services</Link></li>
                               <li ><Link to="" className="black-text" style={{ fontWeight:'500', fontSize: '1.2rem'}}>Contact</Link></li>
-                              <li><a style={{color:'black', fontWeight:'500', fontSize: '1.2rem'}} href="/auth/google">Sign in</a></li>
                               </React.Fragment>
                         );
 
@@ -38,7 +39,7 @@ class Header extends Component {
             return(
                                           <Navbar
                                           style={{height: '8rem'}}
-                                          className="grey lighten-4"
+                                          className="white"
                                           alignLinks="right"
                                           brand={<Link to={ this.props.auth ? '/surveys' : '/' } >
                                                              <img style={{ width: "2.7em", margin:"1rem 1rem"}} className="circle responsive-img" src={Logo} alt="logo"/>
