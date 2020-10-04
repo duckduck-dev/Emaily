@@ -12,7 +12,7 @@ module.exports = survey => {
                         <a href="${keys.redirectDomain}/api/surveys/${survey.id}/yes">Yes</a>
                     </div>
                     <div>
-                        <a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
+                        <a href="${keys.redirectDomain}/api/surveys/${survey.id}/No">No</a>
                     </div>
                     <div>
                     Made with <span style="color:red;">&hearts;</span> by ThunderMail.

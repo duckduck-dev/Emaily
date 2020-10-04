@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import Payments from './payments';
+import Logo from '../images/circle-cropped.png';
+import 'materialize-css';
+import { NavItem, Navbar, Icon } from 'react-materialize';
 
 class Header extends Component {
 
@@ -13,32 +16,50 @@ class Header extends Component {
                   case false:
                         return (
                               <React.Fragment>
-                              <li><a style={{color:'black'}} href="/auth/google"><img className="circle responsive-image" style={{width:'5vh', paddingTop:'1rem'}} src="http://pngimg.com/uploads/google/google_PNG19630.png" alt="google sigin" /></a></li>
+                              <li ><Link to="" className="black-text" style={{fontWeight:'500', fontSize: '1.2rem'}}>Blog</Link></li>
+                              <li ><Link to="" className="black-text" style={{fontWeight:'500', fontSize: '1.2rem'}}>Services</Link></li>
+                              <li ><Link to="" className="black-text" style={{ fontWeight:'500', fontSize: '1.2rem'}}>Contact</Link></li>
+                              <li><a style={{color:'black', fontWeight:'500', fontSize: '1.2rem'}} href="/auth/google">Sign in</a></li>
                               </React.Fragment>
                         );
 
                   default:
-                        return [
-                              <li key="1"><Payments /></li>,
-                              <li key="2"><div href="" style={{ color: 'black', margin:'0 10px' }}>{`Credits : ${this.props.auth.credits}`}</div></li>,
-                              <li key="3"><a  href="/api/logout" style={{ color: 'black' }}>Logout</a></li>
-                                     ];
+                        return (
+                              <div>
+                                    <li key="1"><Payments  /></li>
+                                    <li key="2"><a href=""  className="black-text" style={{color:'black', fontFamily:'Helvetica', fontWeight:'500', fontSize: '1.2rem'}}>{`Credits : ${this.props.auth.credits}`}</a></li>
+                                    <li key="3"><a  href="/api/logout" className="black-text" style={{color:'black', fontFamily:'Helvetica', fontWeight:'500', fontSize: '1.2rem'}}>Logout</a></li>
+                        </div >
+                        );
             }
       }
+
       render() {
             return(
-                  <nav style={{ height: '7rem' }}>
-                        <div className="nav-wrapper white">
-                              <Link to={ this.props.auth ? '/surveys' : '/' } 
-                                    className="left brand-logo " style={{marginLeft:'3vw', color:'black'}}>
-                                    <div style={{margin:'1.1rem 0 0 1rem', position:'absolute', color:'#424242', fontWeight:'bold', fontSize:'2.5rem'}}>ThunderMail</div>
-                              </Link>
-                              <ul className="right" >
-                                   {this.renderContent()}
-                              </ul>
-                             
-                        </div>
-                  </nav>
+                                          <Navbar
+                                          style={{height: '8rem'}}
+                                          className="grey lighten-4"
+                                          alignLinks="right"
+                                          brand={<Link to={ this.props.auth ? '/surveys' : '/' } >
+                                                             <img style={{ width: "2.7em", margin:"1rem 1rem"}} className="circle responsive-img" src={Logo} alt="logo"/>
+                                                       </Link>}
+                                          id="mobile-nav"
+                                           menuIcon={<div style={{margin:"1.5rem 1rem"}}><Icon className="black-text" >menu</Icon></div>}
+                                          options={{
+                                          draggable: true,
+                                          edge: 'left',
+                                          inDuration: 250,
+                                          onCloseEnd: null,
+                                          onCloseStart: null,
+                                          onOpenEnd: null,
+                                          onOpenStart: null,
+                                          outDuration: 200,
+                                          preventScrolling: true
+                                          }}>
+                                    <NavItem style={{ margin: '1.6rem 0' }}>
+                                    {this.renderContent()}
+                                    </NavItem>
+                                    </Navbar>
             );
       }
 }
