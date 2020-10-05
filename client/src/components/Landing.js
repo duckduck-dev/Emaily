@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Row } from 'react-materialize';
+import { Button, Col, Row, TextInput, Icon } from 'react-materialize';
 import Typist from 'react-typist';
 import pic from '../images/ss-banner-customer-experience.png';
 import banner from '../images/ss-banner-employee-experience.png';
@@ -33,19 +33,24 @@ const Landing = () => {
                               <li>Power-up your experience management programs.</li>
                               <li style={{margin: '1rem 0 0 0'}}>One Platform, Many Solutions</li>
                               </ul>
-                        </div>
-                        <div className="center">
                               <Button className="yellow black-text" node="button" style={{marginRight: '5px' }} waves="light">Get started</Button>
                         </div>
                         </Col>
                         <Col l={4} m={6}>
-                        <img style={{width: '40vh', margin: '2.7rem 0rem 0 3rem' }} className= "responsive-img" src={pic} alt="pic"/>
-                        </Col></Row>
-                        <div className="right" style={{fontSize:'2rem', margin: '3vw 0 0 0'}}>
-                              <ul><li style={{margin:'5vw 10vw 0 0'}}>You've got <span style={{fontWeight:'1000'}} className="red-text">#workgoals.</span></li>
-                              <li style={{margin:'1vh 10vw 0 0', fontWeight:'500'}}>We'll help you meet them.</li></ul>
+                        <img style={{width: '42vh', margin: '5rem 0rem 0 0.7rem' }} className= "responsive-img" src={pic} alt="pic"/>
+                        </Col>
+                        <Col l={8} m ={6}>
+                        <div className="center left hide-on-med-only" style={{color: '#00BFFF', margin: '10vh 0 0 23vw'}}>
+                                    <TextInput style={{color: 'orangered' }} id="TextInput-4" label="Email" validate/>
+                                    <Button className="blue" floating icon={<Icon>send</Icon>}  large node="button"  waves="light"/>
                         </div>
-
+                        </Col>
+                        <Col l = {4} m ={6}>
+                              <div className="right hide-on-med-only" style={{fontSize:'2rem', margin: '3vw 0 0 0'}}>
+                                    <ul><li style={{margin:'5vw 11vw 0 0'}}>You've got <span style={{fontWeight:'1000'}} className="red-text">#workgoals.</span></li>
+                                    <li style={{margin:'1vh 11vw 0 0', fontWeight:'500'}}>We'll help you meet them.</li></ul>
+                              </div>
+                        </Col></Row>
             </div>
             <div className="hide-on-med-and-up">
                         <div className="center">
@@ -63,7 +68,7 @@ const Landing = () => {
                               <Button className="yellow black-text" node="button" style={{marginRight: '5px' }} waves="light">Get started</Button>
                         </div>
                         <div className="center" style={{fontSize:'2rem', margin: '3vw 0 0 0'}}>
-                              <ul><li style={{margin:'5vw 0 0 0'}}>You've  <span style={{fontWeight:'1000'}} className="red-text">#workgoals.</span></li>
+                              <ul><li style={{margin:'5vw 0 0 0'}}>You've got <span style={{fontWeight:'1000'}} className="red-text">#workgoals.</span></li>
                               <li style={{margin:'1vh 0vw 0 0'}}>We'll help you meet them.</li></ul>
                         </div>
             </div>
